@@ -3,19 +3,22 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un array
   // Tu código:
-  return array[0];
+  var primero = array[0];
+  return primero;
 }
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-  return array[array.length - 1];
+  var ultimo = array[array.length - 1];
+  return ultimo;
 }
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
-  return array.length;
+  var largo = array.length;
+  return largo;
 }
 
 function incrementarPorUno(array) {
@@ -23,12 +26,14 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  var matriz = [];
-  for (var i = 0; i < array.length; i++) {
-    matriz.push(array[i] + 1)
+  var aumenta = [];
+  for (var i = 0; i < array.length; i++){
+    //aumenta.push(array[i] + 1) 
+    aumenta[i] = array[i] + 1
   }
-  return matriz;
+  return aumenta; 
 }
+
 
 function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
@@ -53,54 +58,63 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  return palabras.join(" ");
+    //var frase = palabras[0];
+    //for(var i = 1; i < palabras.length; i++){
+      //frase = frase + " " + palabras[i];
+    //}
+    //return frase;
+    var frase = palabras.join(" ");
+    return frase;
 }
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  for (var i = 0; i < array.length; i++) {
-    if (array[i] === elemento) {
-      return true;
-    } 
-  }
-  return false;
+    for (var i = 0; i < array.length; i++){
+      if (array[i] === elemento){
+        return true;
+      }
+    }
+    return false;
 }
 
 function agregarNumeros(numeros) {
   // "array" debe ser una matriz de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  var suma = 0;
-  for (var i = 0; i < numeros.length; i++) {
-    suma = suma + numeros[i];
+  var sumar = 0;
+  for (var i = 0; i < numeros.length; i++){
+    //sumar += numeros[i];
+    sumar = sumar + numeros[i];
   }
-  return suma;
+  return sumar;
 }
 
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  var promedio = 0;
-  for (var i = 0; i < resultadosTest.length; i++) {
-    promedio = promedio + resultadosTest[i];
+  //var promedio = agregarNumeros(resultadosTest)/resultadosTest.length;
+  //return promedio;
+  var suma = 0;
+  for (var i = 0; i < resultadosTest.length; i++){
+    suma = suma + resultadosTest[i];
   }
-  return promedio / resultadosTest.length;
+  return suma/resultadosTest.length;
 }
 
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
-  var grande = [0];
-  for (var i = 1; i < numeros.length; i++) {
-    if (numeros[i] > grande) {
-        grande = numeros[i];
-    } 
+  var mGrande = numeros[0];
+  for (var i = 1; i < numeros.length; i++){
+    if (numeros[i] > mGrande){
+      mGrande = numeros[i];
+    }
   }
-  return grande;
+  return mGrande;
 }
 
 function multiplicarArgumentos() {
@@ -108,14 +122,13 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos devuelve 0
   // Si se pasa un argumento, simplemente devuélvelo
   // Tu código:
-  if (arguments.length < 1) {
-    return 0;
+  if (arguments.length < 1) return 0;
+
+  var result = 1;
+  for (var i = 0; i < arguments.length; i++){
+    result = result * arguments[i];
   }
-  var producto = 1;
-  for (var i = 0; i < arguments.length; i++) {
-    producto = producto * arguments[i];
-  }
-  return producto;
+  return result;
 }
 
 // No modificar nada debajo de esta línea
