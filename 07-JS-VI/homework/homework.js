@@ -2,7 +2,7 @@
 
 function invocarCallback(cb) {
   // Invoca al callback `cb`
-  return cb();
+  cb(); 
 }
 
 function sumarArray(numeros, cb) {
@@ -12,28 +12,26 @@ function sumarArray(numeros, cb) {
   var suma = 0;
   for (var i = 0; i < numeros.length; i++) {
     suma = suma + numeros[i];
-  }
-  return cb(suma);
+    }
+    cb(suma);
 }
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
-  for (var i = 0; i < array.length; i++) {
-    cb(array[i]);
-  }
-  return cb;
+  array.forEach(function(x){
+    cb(x);
+  })
 }
 
 function map(array, cb) {
   // Crea un nuevo array
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
-  var newArray = [];
-  var newArray = array.map(function(elemento) {
+  var nuevoArr = array.map(function(elemento){
     return cb(elemento);
   });
-  return newArray;
+  return nuevoArr;
 }
 
 // No modificar nada debajo de esta línea
